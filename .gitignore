@@ -46,3 +46,4 @@ perf.data.old
 /.gm/config-source-cache-default*
 /.gm/last-dispatch-ts
 /.gm/last-instruction-ts
+/.gm/residual-check-fired
