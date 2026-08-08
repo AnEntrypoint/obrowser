@@ -37,3 +37,9 @@ perf.data.old
 
 # Servo build artifacts (when full-servo feature is enabled)
 /servo-build/
+
+# gm orchestrator runtime state (heartbeats, spool in/out, watcher log) --
+# memories/ and disciplines/ stay tracked per gm's own convention.
+/.gm/exec-spool/
+/.gm/gm.db
+/.gm/gm-fired-*
