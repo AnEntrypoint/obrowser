@@ -45,3 +45,4 @@ perf.data.old
 /.gm/gm-fired-*
 /.gm/config-source-cache-default*
 /.gm/last-dispatch-ts
+/.gm/last-instruction-ts
