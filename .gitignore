@@ -43,3 +43,5 @@ perf.data.old
 /.gm/exec-spool/
 /.gm/gm.db
 /.gm/gm-fired-*
+/.gm/config-source-cache-default*
+/.gm/last-dispatch-ts
