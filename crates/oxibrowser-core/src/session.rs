@@ -924,7 +924,11 @@ impl Session {
                     .collect();
                 self.http_client.post_form(&parsed, &form).await?
             }
-            _ => self.http_client.post(&parsed, body.as_bytes().to_vec()).await?,
+            _ => {
+                self.http_client
+                    .post(&parsed, body.as_bytes().to_vec())
+                    .await?
+            }
         };
         let status = response.status;
         let final_url = Url::parse(&response.url).unwrap_or_else(|_| parsed.clone());

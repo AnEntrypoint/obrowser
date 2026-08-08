@@ -45,9 +45,9 @@ use crate::js::job_queue::TokioJobQueue;
 use crate::network::cookie::CookieJar;
 use crate::network::ws::{WsData, WsEvent};
 #[cfg(feature = "native")]
-use oxibrowser_render::{CaptureOpts, RenderError, Viewport};
-#[cfg(feature = "native")]
 pub(crate) use oxibrowser_render::RenderDocument;
+#[cfg(feature = "native")]
+use oxibrowser_render::{CaptureOpts, RenderError, Viewport};
 use std::rc::Rc;
 use std::time::{Duration, Instant};
 
@@ -1273,7 +1273,7 @@ fn process_js_command(
                 ctx.run_jobs();
 
                 // Drain due timers and fire their callbacks
-                drain_timers(&job_queue, ctx);
+                drain_timers(job_queue, ctx);
 
                 // Settle async fetch/XHR kicked off by the script (Phase 3): a
                 // top-level `fetch().then(cb)` must resolve before the result
@@ -1283,7 +1283,7 @@ fn process_js_command(
                     || PENDING_WS
                         .with(|m| m.borrow().values().any(|s| !matches!(s, WsState::Closed)))
                 {
-                    settle_to_idle(ctx, &job_queue, start, Duration::from_millis(timeout));
+                    settle_to_idle(ctx, job_queue, start, Duration::from_millis(timeout));
                 }
 
                 let elapsed = start.elapsed();
@@ -1322,7 +1322,7 @@ fn process_js_command(
                         // If awaitPromise is requested, check if the result is a Promise
                         // and drain microtasks until it resolves.
                         let final_value = if await_promise {
-                            await_promise_value(value, ctx, &job_queue)
+                            await_promise_value(value, ctx, job_queue)
                         } else {
                             value
                         };
@@ -1399,11 +1399,11 @@ fn process_js_command(
                 register_window_globals(
                     ctx,
                     &dom_snapshot_ref,
-                    &mutations,
+                    mutations,
                     viewport,
                     &url,
-                    &user_agent,
-                    &fetch_tx_arc,
+                    user_agent,
+                    fetch_tx_arc,
                 );
                 // Preserve localStorage across URL changes.
                 // TODO(#sop): Check same-origin before preserving localStorage.
@@ -1482,7 +1482,7 @@ fn process_js_command(
                         *render_doc_cell.borrow_mut() = Some(doc);
                         run_navigation_scripts(
                             ctx,
-                            &job_queue,
+                            job_queue,
                             &scripts,
                             nav_loop_limit,
                             nav_recursion_limit,
@@ -1512,7 +1512,7 @@ fn process_js_command(
                 // scripts so JS-only behavior (no layout/paint reads) works.
                 run_navigation_scripts(
                     ctx,
-                    &job_queue,
+                    job_queue,
                     &scripts,
                     nav_loop_limit,
                     nav_recursion_limit,

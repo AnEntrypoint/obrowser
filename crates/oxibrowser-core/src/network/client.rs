@@ -552,9 +552,13 @@ impl HttpClient {
         if !cookies.is_empty() {
             headers.push(("Cookie".to_string(), cookies));
         }
-        let resp =
-            crate::network::host_abi::host_fetch_call(url.as_str(), method, &headers, body.as_deref())
-                .map_err(CoreError::NetworkError)?;
+        let resp = crate::network::host_abi::host_fetch_call(
+            url.as_str(),
+            method,
+            &headers,
+            body.as_deref(),
+        )
+        .map_err(CoreError::NetworkError)?;
         for (name, value) in &resp.headers {
             if name.eq_ignore_ascii_case("set-cookie") {
                 self.cookie_jar.write().store(url, value);

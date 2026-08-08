@@ -87,7 +87,10 @@ pub fn host_fetch_call(
             arr.iter()
                 .filter_map(|pair| {
                     let pair = pair.as_array()?;
-                    Some((pair.first()?.as_str()?.to_string(), pair.get(1)?.as_str()?.to_string()))
+                    Some((
+                        pair.first()?.as_str()?.to_string(),
+                        pair.get(1)?.as_str()?.to_string(),
+                    ))
                 })
                 .collect()
         })

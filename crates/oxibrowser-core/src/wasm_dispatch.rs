@@ -20,8 +20,8 @@ use crate::browser::BrowserId;
 use crate::config::BrowserConfig;
 use crate::network::HttpClient;
 use crate::network::cookie::CookieJar;
-use parking_lot::RwLock;
 use crate::session::Session;
+use parking_lot::RwLock;
 use serde_json::{Value, json};
 use std::alloc::{Layout, alloc, dealloc};
 use std::cell::RefCell;
@@ -72,7 +72,11 @@ fn return_bytes(bytes: Vec<u8>) -> u64 {
 }
 
 fn ok(verb: &str, data: Value) -> u64 {
-    return_bytes(json!({ "ok": true, "verb": verb, "data": data }).to_string().into_bytes())
+    return_bytes(
+        json!({ "ok": true, "verb": verb, "data": data })
+            .to_string()
+            .into_bytes(),
+    )
 }
 
 fn err(verb: &str, message: impl Into<String>) -> u64 {
@@ -154,7 +158,9 @@ async fn with_session<F, T>(f: F) -> Result<T, String>
 where
     F: for<'a> FnOnce(
         &'a mut Session,
-    ) -> std::pin::Pin<Box<dyn std::future::Future<Output = crate::error::Result<T>> + 'a>>,
+    ) -> std::pin::Pin<
+        Box<dyn std::future::Future<Output = crate::error::Result<T>> + 'a>,
+    >,
 {
     let mut cell = SESSION.take();
     if cell.is_none() {
@@ -188,8 +194,7 @@ async fn verb_navigate(body: &Value) -> u64 {
         return err("navigate", "missing required field: url");
     };
     let url = url.to_string();
-    match with_session(|session| Box::pin(async move { session.navigate(&url).await })).await
-    {
+    match with_session(|session| Box::pin(async move { session.navigate(&url).await })).await {
         Ok(()) => ok("navigate", json!({ "navigated": true })),
         Err(e) => err("navigate", e),
     }
@@ -216,8 +221,7 @@ async fn verb_dom_query(body: &Value) -> u64 {
         return err("dom-query", "missing required field: selector");
     };
     let selector = selector.to_string();
-    match with_session(|session| Box::pin(async move { session.dom_snapshot().await })).await
-    {
+    match with_session(|session| Box::pin(async move { session.dom_snapshot().await })).await {
         Ok(Some(snapshot)) => {
             let matched = snapshot.query_selector_all(&selector);
             let nodes: Vec<Value> = matched
