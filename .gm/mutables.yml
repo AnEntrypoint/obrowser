@@ -1,0 +1,5 @@
+- key: wasm-target-abi
+  status: witnessed
+  witness: ../gm/rs-plugkit/.github/workflows/build.yml targets wasm32-wasip1 via cargo check --target wasm32-wasip1 --no-default-features --lib; both ../gm and ../thebird consume wasm via a JS host runtime (agentplug), not wasm-bindgen browser bindings. oxibrowser has no wasm target and depends on btls (BoringSSL C), ring (C/asm), tokio threads, std::thread for JS engine -- none compile to wasm32-wasip1 without a compat shim or feature-gating.
+  id: mut-1786206946227
+  witness_evidence: 'User answered AskUserQuestion selecting ''Expose oxibrowser as a wasm plugin/tool for gm''s agentplug runtime''. Confirmed: wasm32-wasip1 target, plugkit-core wasm_dispatch/host_abi pattern (host_fetch/host_ws imported fns proxy network IO to host, no native TLS/threads in wasm build). Captured as PRD rows wasm-crate-scaffold, wasm-feature-gate-network, wasm-host-fetch-shim, wasm-feature-gate-render, wasm-js-engine-portability, wasm-verb-surface, wasm-cdp-exclusion, wasm-cargo-check-ci, wasm-gm-integration, wasm-thebird-integration, wasm-getrandom-backend.'

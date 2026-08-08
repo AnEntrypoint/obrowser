@@ -1,0 +1,416 @@
+evt: {"changed":["C:\\dev\\oxibrowser/.gm/config-source-cache-default/gm.config.json"],"changed_count":1,"event":"config_changed","id":"cfg-implicit_default_repo-54654e2daf63-1786206707627","new_sha":"54654e2daf63","old_sha":"","tier":"implicit_default_repo","ts":1786206707678}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206707833,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206707879,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206707927,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206707970,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.rssearch_vectors","ts":1786206708339}
+evt: {"event":"recall_first_touch_sync","namespaces":["default"],"result":{"converged":false,"report":[{"changed":0,"deferred":0,"failed":0,"namespace":"default","rekeyed":0,"removed_keys":0,"resurrected":0,"retimed":0,"upserted":0}]},"ts":1786206708471}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":217,"ts":1786206708471}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786206708475}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":7,"ts":1786206708483}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786206708486}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786206708487}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"SPECIFY","prd_pending_count":0,"ts":1786206708493}
+evt: {"event":"dispatch.end","ms":6766,"ts":1786206708494,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206773039,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206773092,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206773098,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206773152,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"codeinsight_rebuild","reason":"digest-absent","stored_then_current":"v3:f75528a4a70b8d0a:files=139","ts":1786206773254}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.code_chunks","ts":1786206773391}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.memories","ts":1786206773393}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":33,"ts":1786206773414}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786206773417}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":9,"ts":1786206773429}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786206773432}
+evt: {"event":"dispatch.end","ms":455,"ts":1786206773432,"verb":"recall"}
+evt: {"budget_chunks":2,"chunks_indexed":2,"chunks_total":9,"count_cap":64,"event":"code_index_chunk_cap","path":"AGENTS.md","pessimistic_ms_per_chunk":16000,"remaining_ms":44960,"ts":1786206773459}
+evt: {"chunks":2,"embed_ms":13046,"event":"code_index_slow_file_embed","path":"AGENTS.md","reused_chunks":0,"ts":1786206786506}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206786548,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206786593,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":66,"count_cap":64,"event":"code_index_chunk_cap","path":"CHANGELOG.md","pessimistic_ms_per_chunk":16000,"remaining_ms":31660,"ts":1786206786759}
+evt: {"chunks":1,"embed_ms":4031,"event":"code_index_slow_file_embed","path":"CHANGELOG.md","reused_chunks":0,"ts":1786206790792}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":24,"count_cap":64,"event":"code_index_chunk_cap","path":"CONTRIBUTING.md","pessimistic_ms_per_chunk":16000,"remaining_ms":27574,"ts":1786206790845}
+evt: {"chunks":1,"embed_ms":4104,"event":"code_index_slow_file_embed","path":"CONTRIBUTING.md","reused_chunks":0,"ts":1786206794950}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206794994,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206795036,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":3,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/describe.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":23285,"ts":1786206795134}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":20,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/main.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":20673,"ts":1786206797746}
+evt: {"chunks":1,"embed_ms":6417,"event":"code_index_slow_file_embed","path":"crates/oxibrowser/src/main.rs","reused_chunks":0,"ts":1786206804163}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206804211,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206804258,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":47,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/output.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":14017,"ts":1786206804403}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":21,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/search/bing.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":12931,"ts":1786206805488}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":23,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/search/ddg.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":11831,"ts":1786206806588}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":17,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/search/engine.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":10763,"ts":1786206807656}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":19,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/search/github.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":10157,"ts":1786206808262}
+evt: {"chunks":1,"embed_ms":4150,"event":"code_index_slow_file_embed","path":"crates/oxibrowser/src/search/github.rs","reused_chunks":0,"ts":1786206812413}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206812458,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206812500,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":10,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/search/mod.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":5822,"ts":1786206812597}
+evt: {"chunks":1,"embed_ms":4139,"event":"code_index_slow_file_embed","path":"crates/oxibrowser/src/search/mod.rs","reused_chunks":0,"ts":1786206816738}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":9,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/search/wiki.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":1603,"ts":1786206816817}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206819277,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206819321,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"code_index_commit_overview_skipped","path":"crates/oxibrowser/src/search/wiki.rs","reason":"wall budget already exhausted; the git subprocess is enrichment and is deferred to the next pass","ts":1786206819373}
+evt: {"deferred_files":128,"embedded":13,"event":"codeinsight_index_partial","files_indexed":15,"ts":1786206819379}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.rssearch_vectors","ts":1786206819660}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":0,"ts":1786206819660}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786206819663}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":0,"ts":1786206819664}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786206819667}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.code_chunks","ts":1786206819685}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.memories","ts":1786206819687}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.git_commit_vectors","ts":1786206819788}
+evt: {"deferred":210,"embedded":8,"event":"git_commit_vectors_synced","skipped":0,"ts":1786206871752,"window":218}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206871795,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206871838,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"dispatch.end","ms":98872,"ts":1786206871849,"verb":"codesearch"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206946129,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786206946221,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"mutable.added","id":"mut-1786206946227","ts":1786206946230}
+evt: {"event":"dispatch.end","ms":199,"ts":1786206946230,"verb":"mutable-add"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207076436,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207076442,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207076494,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207076510,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207076654,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207076659,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.added","id":"wasm-crate-scaffold","rescoped":false,"ts":1786207076663}
+evt: {"event":"dispatch.end","ms":290,"ts":1786207076664,"verb":"prd-add"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207076710,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.added","id":"wasm-getrandom-backend","rescoped":false,"ts":1786207076723}
+evt: {"event":"dispatch.end","ms":349,"ts":1786207076723,"verb":"prd-add"}
+evt: {"event":"prd.added","id":"wasm-verb-surface","rescoped":false,"ts":1786207076738}
+evt: {"event":"dispatch.end","ms":9,"ts":1786207076739,"verb":"prd-add"}
+evt: {"event":"prd.added","id":"wasm-js-engine-portability","rescoped":false,"ts":1786207076765}
+evt: {"event":"dispatch.end","ms":10,"ts":1786207076765,"verb":"prd-add"}
+evt: {"event":"prd.added","id":"wasm-cdp-exclusion","rescoped":false,"ts":1786207076789}
+evt: {"event":"dispatch.end","ms":9,"ts":1786207076790,"verb":"prd-add"}
+evt: {"event":"prd.added","id":"wasm-host-fetch-shim","rescoped":false,"ts":1786207076812}
+evt: {"event":"dispatch.end","ms":438,"ts":1786207076813,"verb":"prd-add"}
+evt: {"event":"prd.added","id":"wasm-feature-gate-render","rescoped":false,"ts":1786207076815}
+evt: {"event":"dispatch.end","ms":9,"ts":1786207076816,"verb":"prd-add"}
+evt: {"event":"prd.added","id":"wasm-cargo-check-ci","rescoped":false,"ts":1786207076843}
+evt: {"event":"dispatch.end","ms":12,"ts":1786207076844,"verb":"prd-add"}
+evt: {"event":"prd.added","id":"wasm-feature-gate-network","rescoped":false,"ts":1786207076849}
+evt: {"event":"dispatch.end","ms":13,"ts":1786207076850,"verb":"prd-add"}
+evt: {"event":"prd.added","id":"wasm-gm-integration","rescoped":false,"ts":1786207076851}
+evt: {"event":"dispatch.end","ms":15,"ts":1786207076852,"verb":"prd-add"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207078123,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.added","id":"wasm-thebird-integration","rescoped":false,"ts":1786207078187}
+evt: {"event":"dispatch.end","ms":1813,"ts":1786207078187,"verb":"prd-add"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207100246,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207100290,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_cache_hit","query_len":55,"ts":1786207100321}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786207100330}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786207100333}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786207100345}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786207100348}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786207100349}
+evt: {"event":"instruction.served","mutables_pending_count":1,"phase":"SPECIFY","prd_pending_count":10,"ts":1786207100372}
+evt: {"event":"dispatch.end","ms":187,"ts":1786207100373,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207194664,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207194709,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"dispatch.end","ms":107,"ts":1786207194716,"verb":"mutable-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207225036,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207225089,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"mutable.resolved","id":"mut-1786206946227","ts":1786207225100}
+evt: {"event":"dispatch.end","ms":213,"ts":1786207225100,"verb":"mutable-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207246655,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207246696,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_cache_hit","query_len":55,"ts":1786207246721}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":7,"ts":1786207246729}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786207246732}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":7,"ts":1786207246742}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786207246745}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786207246746}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"SPECIFY","prd_pending_count":10,"ts":1786207246768}
+evt: {"event":"dispatch.end","ms":204,"ts":1786207246768,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207262810,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207262859,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"phase.transitioned","from":"SPECIFY","phase":"PROVE","ts":1786207262870}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":9,"ts":1786207263434}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":5,"ts":1786207263438}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":10,"ts":1786207263451}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786207263455}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"PROVE Create crates oxibrowser-wasm crate targeting","sub":"memory","ts":1786207263455}
+evt: {"event":"dispatch.end","ms":695,"ts":1786207263456,"verb":"transition"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207304038,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207304098,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_cache_hit","query_len":55,"ts":1786207304141}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":9,"ts":1786207304151}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786207304154}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":9,"ts":1786207304167}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786207304171}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786207304172}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"PROVE","prd_pending_count":10,"ts":1786207304195}
+evt: {"event":"dispatch.end","ms":206,"ts":1786207304196,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207344490,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207344533,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"phase.transitioned","from":"PROVE","phase":"EMIT","ts":1786207344546}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786207345030}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786207345034}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786207345046}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786207345049}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"EMIT Create crates oxibrowser-wasm crate targeting","sub":"memory","ts":1786207345050}
+evt: {"event":"dispatch.end","ms":605,"ts":1786207345051,"verb":"transition"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207359993,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207360038,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"codeinsight_rebuild","reason":"digest-mismatch","stored_then_current":"v3:f75528a4a70b8d0a:files=139","ts":1786207360150}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.code_chunks","ts":1786207360165}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.memories","ts":1786207360166}
+evt: {"budget_chunks":2,"chunks_indexed":2,"chunks_total":5,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/session/executor.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":44918,"ts":1786207360283}
+evt: {"chunks":2,"embed_ms":8819,"event":"code_index_slow_file_embed","path":"crates/oxibrowser/src/session/executor.rs","reused_chunks":0,"ts":1786207369102}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207369146,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207369190,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"chunks":1,"embed_ms":4289,"event":"code_index_slow_file_embed","path":"crates/oxibrowser/src/session/mod.rs","reused_chunks":0,"ts":1786207373593}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":41,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/session/parser.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":31440,"ts":1786207373760}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207374852,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207374894,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":12,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/session/tab_manager.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":30244,"ts":1786207374956}
+evt: {"chunks":1,"embed_ms":4409,"event":"code_index_slow_file_embed","path":"crates/oxibrowser/src/skill.rs","reused_chunks":0,"ts":1786207379700}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":24,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/src/validate.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":25411,"ts":1786207379789}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207380874,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207385180,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"chunks_in_file":1,"event":"code_index_unbounded_chunk_write_loop_slow","loop_ms":4424,"note":"no elapsed-check guard exists inside this loop by design -- see index-resumable-partial-file-so-chunk-writes-can-be-budget-bounded for why a naive guard would be unsafe","path":"crates/oxibrowser/src/validate.rs","ts":1786207385250,"wall_budget_ms":45000}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":18,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/tests/cli.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":19884,"ts":1786207385316}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207386387,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207386427,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":2,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/tests/common/mod.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":18669,"ts":1786207386531}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":9,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/tests/integration.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":16037,"ts":1786207389163}
+evt: {"chunks":1,"embed_ms":4373,"event":"code_index_slow_file_embed","path":"crates/oxibrowser/tests/integration.rs","reused_chunks":0,"ts":1786207393537}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207393581,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207393628,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":17,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/tests/smoke.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":11416,"ts":1786207393784}
+evt: {"chunks":1,"embed_ms":7490,"event":"code_index_slow_file_embed","path":"crates/oxibrowser/tests/smoke.rs","reused_chunks":0,"ts":1786207401274}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207401381,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207401427,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":4,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser/tests/ssrf_offline.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":3699,"ts":1786207401501}
+evt: {"budget_chunks":1,"chunks_indexed":1,"chunks_total":4,"count_cap":64,"event":"code_index_chunk_cap","path":"crates/oxibrowser-cdp/src/domains/browser.rs","pessimistic_ms_per_chunk":16000,"remaining_ms":1067,"ts":1786207404133}
+evt: {"event":"code_index_commit_overview_skipped","path":"crates/oxibrowser-cdp/src/domains/browser.rs","reason":"wall budget already exhausted; the git subprocess is enrichment and is deferred to the next pass","ts":1786207406014}
+evt: {"deferred_files":115,"embedded":13,"event":"codeinsight_index_partial","files_indexed":28,"ts":1786207406021}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207406096,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786207406169,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":0,"ts":1786207406485}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":13,"ts":1786207406498}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":0,"ts":1786207406499}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786207406502}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.code_chunks","ts":1786207406527}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.memories","ts":1786207406529}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.git_commit_vectors","ts":1786207406588}
+evt: {"event":"dispatch.end","ms":46754,"ts":1786207406645,"verb":"codesearch"}
+evt: evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786209347847,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}{"event":"config_resolved","tier":"implicit_default_repo","ts":1786209347847,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786209348029,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786209348029,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.resolved","id":"wasm-feature-gate-render","ts":1786209348054}
+evt: {"event":"dispatch.end","ms":507,"ts":1786209348055,"verb":"prd-resolve"}
+evt: {"event":"prd.resolved","id":"wasm-crate-scaffold","ts":1786209348055}
+evt: {"event":"dispatch.end","ms":507,"ts":1786209348056,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786209349320,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786209349370,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"dispatch.end","ms":1835,"ts":1786209349383,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786209410663,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786209410704,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_spill_hit","query_len":55,"ts":1786209410752}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":33,"ts":1786209410786}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":7,"ts":1786209410793}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786209410805}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786209410808}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786209410809}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"EMIT","prd_pending_count":9,"ts":1786209410840}
+evt: {"event":"dispatch.end","ms":284,"ts":1786209410841,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786209458389,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786209458438,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.resolved","id":"wasm-feature-gate-render","ts":1786209458449}
+evt: {"event":"dispatch.end","ms":117,"ts":1786209458450,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786211111744,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786211111836,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_spill_hit","query_len":55,"ts":1786211111876}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":17,"ts":1786211111894}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786211111897}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":7,"ts":1786211111907}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786211111910}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786211111911}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"EMIT","prd_pending_count":8,"ts":1786211111939}
+evt: {"event":"dispatch.end","ms":1752,"ts":1786211111939,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786211167842,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786211167884,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.resolved","id":"wasm-getrandom-backend","ts":1786211167896}
+evt: {"event":"dispatch.end","ms":117,"ts":1786211167896,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786212864603,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786212864653,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.resolved","id":"wasm-js-engine-portability","ts":1786212864665}
+evt: {"event":"dispatch.end","ms":1668,"ts":1786212864666,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786212920159,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786212920213,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.resolved","id":"wasm-cdp-exclusion","ts":1786212920227}
+evt: {"event":"dispatch.end","ms":128,"ts":1786212920228,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786212936108,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786212936161,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_spill_hit","query_len":55,"ts":1786212936197}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":13,"ts":1786212936211}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786212936215}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":7,"ts":1786212936227}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786212936231}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786212936232}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"EMIT","prd_pending_count":5,"ts":1786212936264}
+evt: {"event":"dispatch.end","ms":209,"ts":1786212936265,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786213272404,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786213274247,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.resolved","id":"wasm-host-fetch-shim","ts":1786213274261}
+evt: {"event":"dispatch.end","ms":1910,"ts":1786213274261,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786213730917,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786213732368,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.resolved","id":"wasm-verb-surface","ts":1786213732391}
+evt: {"event":"dispatch.end","ms":1519,"ts":1786213732392,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786213884359,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786213884414,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.resolved","id":"wasm-cargo-check-ci","ts":1786213884427}
+evt: {"event":"dispatch.end","ms":124,"ts":1786213884427,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786214191098,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786214192701,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.added","id":"wasm-verb-surface","rescoped":true,"ts":1786214192713}
+evt: {"event":"dispatch.end","ms":1674,"ts":1786214192714,"verb":"prd-add"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786214215891,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786214215996,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.resolved","id":"wasm-verb-surface","ts":1786214216008}
+evt: {"event":"dispatch.end","ms":176,"ts":1786214216009,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786215849012,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786215849064,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.resolved","id":"wasm-gm-integration","ts":1786215849078}
+evt: {"event":"dispatch.end","ms":1624,"ts":1786215849078,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216633960,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216635437,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"prd.resolved","id":"wasm-thebird-integration","ts":1786216635449}
+evt: {"event":"dispatch.end","ms":1544,"ts":1786216635450,"verb":"prd-resolve"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216659402,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216659453,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_spill_hit","query_len":55,"ts":1786216659502}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":14,"ts":1786216659518}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786216659521}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":7,"ts":1786216659532}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786216659536}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786216659536}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"EMIT","prd_pending_count":0,"ts":1786216659570}
+evt: {"event":"dispatch.end","ms":222,"ts":1786216659570,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216675859,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216675913,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"phase.transitioned","from":"EMIT","phase":"STATE","ts":1786216676211}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786216676602}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786216676605}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786216676617}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786216676620}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"STATE","sub":"memory","ts":1786216676621}
+evt: {"event":"dispatch.end","ms":813,"ts":1786216676621,"verb":"transition"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216691491,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216691543,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_cache_hit","query_len":55,"ts":1786216691583}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":9,"ts":1786216691592}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786216691596}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786216691606}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786216691609}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786216691610}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"STATE","prd_pending_count":0,"ts":1786216691638}
+evt: {"event":"dispatch.end","ms":202,"ts":1786216691639,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216737898,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216737987,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"dispatch.end","ms":161,"ts":1786216737991,"verb":"exec_js"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216861557,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216861712,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"phase.transitioned","from":"STATE","phase":"CONC","ts":1786216861724}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":10,"ts":1786216862027}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786216862031}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786216862043}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786216862047}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"CONC","sub":"memory","ts":1786216862047}
+evt: {"event":"dispatch.end","ms":575,"ts":1786216862048,"verb":"transition"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216973461,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216977809,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216978293,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786216978540,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_cache_hit","query_len":55,"ts":1786216978602}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":12,"ts":1786216978615}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":5,"ts":1786216978620}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":17,"ts":1786216978643}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":12,"ts":1786216978655}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786216978656}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"CONC","prd_pending_count":0,"ts":1786216978758}
+evt: {"event":"dispatch.end","ms":5406,"ts":1786216978759,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217062516,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217062565,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"phase.transitioned","from":"CONC","phase":"SEC","ts":1786217062576}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786217062881}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786217062885}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786217062896}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786217062900}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"SEC","sub":"memory","ts":1786217062901}
+evt: {"event":"dispatch.end","ms":440,"ts":1786217062901,"verb":"transition"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217174566,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217174620,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"wasm_panic","location":"crates/plugkit-core/src/orchestrator/mod.rs:145:5","message":"gm_dir: project root resolution failed after 5 attempts via `git rev-parse --show-toplevel --git-common-dir` -- refusing to silently fall back to CLAUDE_PROJECT_DIR/HOME, which would mis-root every stateful verb onto the wrong tree. Check for git subprocess/lock contention or a missing .git directory.","ts":1786217174931}
+evt: {"event":"plugin_poisoned_store_evicted","plugin":"gm","prior_dispatch_error":"error while executing at wasm backtrace:\n    0: 0x2b74e7 - <unknown>!<wasm function 10850>\n    1: 0x2ac4a6 - <unknown>!<wasm function 10665>\n    2: 0x2a7db7 - <unknown>!<wasm function 10605>\n    3: 0x2a855c - <unknown>!<wasm function 10616>\n    4: 0x2a6546 - <unknown>!<wasm function 10563>\n    5: 0x2a83a1 - <unknown>!<wasm function 10613>\n    6: 0x2a765e - <unknown>!<wasm function 10598>\n    7: 0x2a7174 - <unknown>!<wasm function 10594>\n    8: 0x2a70dc - <unknown>!<wasm function 10593>\n    9: 0x2a863f - <unknown>!<wasm function 10619>\n   10: 0x2c237a - <unknown>!<wasm function 10953>\n   11:  0x7ca7d - <unknown>!<wasm function 2091>\n   12:  0xd176e - <unknown>!<wasm function 2460>\n   13:  0xc8eb9 - <unknown>!<wasm function 2397>\n   14:  0xaee47 - <unknown>!<wasm function 2247>\n   15:  0xacfb3 - <unknown>!<wasm function 2239>\n   16:  0xe2eea - <unknown>!<wasm function 2519>\n   17: 0x1046a0 - <unknown>!<wasm function 2672>\n   18: 0x2ccba2 - <unknown>!<wasm function 11087>","reinstantiation_succeeded":true,"ts":1786217174936,"verb":"transition"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217236052,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217236102,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"wasm_panic","location":"crates/plugkit-core/src/orchestrator/mod.rs:145:5","message":"gm_dir: project root resolution failed after 5 attempts via `git rev-parse --show-toplevel --git-common-dir` -- refusing to silently fall back to CLAUDE_PROJECT_DIR/HOME, which would mis-root every stateful verb onto the wrong tree. Check for git subprocess/lock contention or a missing .git directory.","ts":1786217236329}
+evt: {"event":"plugin_poisoned_store_evicted","plugin":"gm","prior_dispatch_error":"error while executing at wasm backtrace:\n    0: 0x2b74e7 - <unknown>!<wasm function 10850>\n    1: 0x2ac4a6 - <unknown>!<wasm function 10665>\n    2: 0x2a7db7 - <unknown>!<wasm function 10605>\n    3: 0x2a855c - <unknown>!<wasm function 10616>\n    4: 0x2a6546 - <unknown>!<wasm function 10563>\n    5: 0x2a83a1 - <unknown>!<wasm function 10613>\n    6: 0x2a765e - <unknown>!<wasm function 10598>\n    7: 0x2a7174 - <unknown>!<wasm function 10594>\n    8: 0x2a70dc - <unknown>!<wasm function 10593>\n    9: 0x2a863f - <unknown>!<wasm function 10619>\n   10: 0x2c237a - <unknown>!<wasm function 10953>\n   11:  0x7ca7d - <unknown>!<wasm function 2091>\n   12:  0xd176e - <unknown>!<wasm function 2460>\n   13:  0xc8eb9 - <unknown>!<wasm function 2397>\n   14:  0xaee47 - <unknown>!<wasm function 2247>\n   15:  0x8c917 - <unknown>!<wasm function 2108>\n   16:  0x7d17b - <unknown>!<wasm function 2093>\n   17:  0xe325f - <unknown>!<wasm function 2519>\n   18: 0x1046a0 - <unknown>!<wasm function 2672>\n   19: 0x2ccba2 - <unknown>!<wasm function 11087>","reinstantiation_succeeded":true,"ts":1786217236331,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217659617,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217661440,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_spill_hit","query_len":55,"ts":1786217661527}
+evt: {"dim":384,"event":"embed_generation_recorded","key":"b8b6f24106dd526a","model":"BAAI/bge-small-en-v1.5","scope":".gm/.embed-generation.rssearch_vectors","ts":1786217661543}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":24,"ts":1786217661552}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786217661555}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786217661566}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786217661570}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786217661571}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217661622,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217661671,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"SEC","prd_pending_count":0,"ts":1786217661702}
+evt: {"event":"dispatch.end","ms":2201,"ts":1786217661702,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217680618,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217680678,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"phase.transitioned","from":"SEC","phase":"RES","ts":1786217680807}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":9,"ts":1786217681240}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":4,"ts":1786217681244}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786217681255}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786217681258}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"RES","sub":"memory","ts":1786217681259}
+evt: {"event":"dispatch.end","ms":706,"ts":1786217681260,"verb":"transition"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217761147,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217761194,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"phase.transitioned","from":"RES","phase":"DECIDE","ts":1786217761334}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786217761628}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786217761631}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786217761642}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786217761645}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"DECIDE","sub":"memory","ts":1786217761645}
+evt: {"event":"dispatch.end","ms":611,"ts":1786217761646,"verb":"transition"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217842662,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786217842722,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_cache_hit","query_len":55,"ts":1786217842761}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786217842770}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786217842773}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":7,"ts":1786217842785}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786217842789}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786217842789}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"DECIDE","prd_pending_count":0,"ts":1786217842819}
+evt: {"event":"dispatch.end","ms":228,"ts":1786217842820,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786219115144,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786219115193,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786219115247,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786219115295,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"detail":"verb=git_finalize gap_ms=1272375","event":"deviation.long-gap-no-instruction","kind":"long-gap-no-instruction","severity":"deny","source":"rs-plugkit/gates","sub":"hook","ts":1786219115296}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786219160802,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786219160936,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"embed.query_spill_hit","query_len":55,"ts":1786219160975}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":8,"ts":1786219160984}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786219160987}
+evt: {"did_sync":false,"event":"recall_vector_phase_timing","namespaces":1,"sync_ms":6,"ts":1786219160995}
+evt: {"event":"recall_vector_phase_timing","outcome":"ok","search_ms":3,"ts":1786219160998}
+evt: {"event":"recall","hit":false,"mode":"kv_query","n_hits":0,"namespace":"default","query":"build oxibrowser wasm run thebird gm","sub":"memory","ts":1786219160998}
+evt: {"event":"instruction.served","mutables_pending_count":0,"phase":"DECIDE","prd_pending_count":0,"ts":1786219161020}
+evt: {"event":"dispatch.end","ms":292,"ts":1786219161021,"verb":"instruction"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786219184237,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"config_resolved","tier":"implicit_default_repo","ts":1786219184288,"version":1,"why":"gm's own shared default config repo at https://github.com/AnEntrypoint/gm-config (no project or user config.source.json configured)"}
+evt: {"event":"git.commit","repo":null,"sha":"28bd698734","summary":"feat: wasm32-wasip1 support for oxibrowser-core + agentplug plugin integration","ts":1786219187401}
