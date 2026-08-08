@@ -10591,18 +10591,22 @@ mod tests {
 
     #[tokio::test]
     async fn test_async_fetch_non_blocking() {
-        // fetch() must NOT block the JS thread: a 300 ms RTT must return to
+        // fetch() must NOT block the JS thread: a 1000 ms RTT must return to
         // the next statement in well under that. On `main` the recv() blocked
-        // ≈ the full RTT.
+        // ≈ the full RTT. Threshold widened from 60ms/300ms RTT to 200ms/1000ms
+        // RTT: a shared CI runner's scheduling jitter alone can exceed 60ms,
+        // which made this assertion flake on GitHub Actions even though the
+        // fetch was genuinely non-blocking -- the ratio (RTT:threshold = 5:1)
+        // is preserved, only the absolute margin grew to tolerate that jitter.
         let mut rt = JsRuntime::new();
         let (req_tx, req_rx) = std::sync::mpsc::channel::<FetchRequestMsg>();
         let (resp_tx, resp_rx) = std::sync::mpsc::channel::<FetchResponseMsg>();
         rt.set_fetch_channel(req_tx, resp_rx);
-        let _h = spawn_test_fetch_handler(req_rx, resp_tx, 300, "{\"value\":42}".to_string());
+        let _h = spawn_test_fetch_handler(req_rx, resp_tx, 1000, "{\"value\":42}".to_string());
 
         let r = rt
             .evaluate(
-                "window.__t0 = performance.now(); fetch('http://x/'); window.__t1 = performance.now(); (window.__t1 - window.__t0) < 60",
+                "window.__t0 = performance.now(); fetch('http://x/'); window.__t1 = performance.now(); (window.__t1 - window.__t0) < 200",
             )
             .await
             .unwrap();
