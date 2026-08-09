@@ -47,3 +47,20 @@ perf.data.old
 /.gm/last-dispatch-ts
 /.gm/last-instruction-ts
 /.gm/residual-check-fired
+/.gm/.gm-continue-count
+/.gm/browser-chrome-profile-*/
+/.gm/browser-profile-*/
+/.gm/browser-profiles/
+/.gm/browser-state/
+/.gm/pw-sock-*
+/.gm/tmp/
+/.gm/witness/
+/.gm/npm-cache/
+
+# agentplug daemon runtime cache/index (codeinsight cache, plugin dispatch
+# spool, embed-query spill) -- regenerated locally, not source.
+/.agentplug-kv/
+/.agentplug/plugin-dispatch/
+
+# msys/git-bash crash artifact, not project state.
+sh.exe.stackdump
