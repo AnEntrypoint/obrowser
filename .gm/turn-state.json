@@ -1,8 +1,8 @@
 {
-  "phase": "DECIDE",
-  "session_id": "gm-confirm-1786262401",
-  "last_skill": "gm-complete",
-  "updated_at_ms": 1786262568223,
+  "phase": "PROVE",
+  "session_id": "gm-fixture-1786267636",
+  "last_skill": "gm-emit",
+  "updated_at_ms": 1786270249235,
   "pending_step_id": null,
   "pending_step_deadline_ms": null
 }
