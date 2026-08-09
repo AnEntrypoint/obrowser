@@ -1,4 +1,1 @@
-- session_id: gm-confirm-1786262401
-  id: fix-flaky-async-fetch-test
-  subject: CI Test job failed again on js::runtime::tests::test_async_fetch_non_blocking (timing assertion flake on shared runner even after a prior widening) -- widen the margin further or make it structurally more robust, re-verify CI
-  status: pending
+[]
