@@ -83,6 +83,7 @@ pub struct Client;
 /// Only applies to http/https schemes — about:, data:, etc. bypass.
 /// This is a standalone function so it can be used both for initial requests
 /// and inside the redirect policy closure.
+#[cfg(feature = "native")]
 fn check_url_ssrf(url: &Url, filter: &IpFilter) -> bool {
     // Only http/https can be SSRF targets; data:, blob:, about: etc. are local.
     if url.scheme() != "http" && url.scheme() != "https" {
@@ -528,9 +529,18 @@ impl HttpClient {
         })
     }
 
+    /// The wasm guest has no local DNS resolver, so only IP-literal hosts can
+    /// be checked here; the host performing `host_fetch` sees the real
+    /// destination and is responsible for enforcing SSRF policy on hostnames.
     fn check_ssrf(&self, url: &Url) -> Result<()> {
-        if !check_url_ssrf(url, &self.ip_filter)
-            && let Some(host) = url.host_str()
+        if url.scheme() != "http" && url.scheme() != "https" {
+            return Ok(());
+        }
+        let Some(host) = url.host_str() else {
+            return Ok(());
+        };
+        if let Ok(addr) = host.parse::<std::net::IpAddr>()
+            && !self.ip_filter.is_allowed(&addr)
         {
             return Err(CoreError::NetworkError(format!(
                 "SSRF blocked: hostname {} resolves to a blocked IP address",
