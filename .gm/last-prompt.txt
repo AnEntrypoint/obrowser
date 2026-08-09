@@ -1,1 +1,1 @@
-build oxibrowser to wasm to run in ../thebird and ../gm
+finish all remaining work fix any issues that arise

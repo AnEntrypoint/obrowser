@@ -1,8 +1,8 @@
 {
-  "phase": "DECIDE",
-  "session_id": null,
-  "last_skill": "gm-complete",
-  "updated_at_ms": 1786217761323,
+  "phase": "RES",
+  "session_id": "gm-finishall-1786259445",
+  "last_skill": "gm-decide",
+  "updated_at_ms": 1786260349511,
   "pending_step_id": null,
   "pending_step_deadline_ms": null
 }
