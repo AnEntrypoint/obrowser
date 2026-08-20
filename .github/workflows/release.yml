@@ -22,7 +22,5 @@ jobs:
       release_repo: AnEntrypoint/obrowser-bin
       release_title_prefix: obrowser
       build_command: cargo build --release -p oxibrowser-core --no-default-features --target wasm32-wasip1
-      npm_package_name: obrowser-wasm
     secrets:
       publisher_token: ${{ secrets.PUBLISHER_TOKEN }}
-      npm_token: ${{ secrets.NPM_TOKEN }}
