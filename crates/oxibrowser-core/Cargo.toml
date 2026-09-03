@@ -1,0 +1,62 @@
+[package]
+name = "oxibrowser-core"
+version = "0.18.0"
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+rust-version.workspace = true
+description = "Core browser engine: Browser, Session, Page, Frame lifecycle"
+
+[lib]
+# cdylib is required so `wasm_dispatch::dispatch_verb`'s #[no_mangle] export
+# actually appears in the wasm32-wasip1 binary's export table for a host
+# (gm's agentplug) to call; rlib keeps native's internal consumers (the
+# `oxibrowser` CLI, `oxibrowser-cdp`) working exactly as before.
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+tokio = { version = "1", default-features = false, features = ["sync", "macros", "io-util", "rt", "time"] }
+futures = { workspace = true }
+async-trait = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+base64 = { workspace = true }
+tracing = { workspace = true }
+url = { workspace = true }
+percent-encoding = "2"
+uuid = { workspace = true }
+bytes = { workspace = true }
+image = { workspace = true }
+parking_lot = { workspace = true }
+wreq = { workspace = true, optional = true }
+wreq-util = { workspace = true, optional = true }
+encoding_rs = { workspace = true }
+boa_engine = { workspace = true }
+boa_gc = { workspace = true }
+pollster = "0.4"
+serde_yaml = "0.9"
+regex = "1.10"
+chrono = "0.4"
+
+oxibrowser-render = { version = "0.18.0", path = "../oxibrowser-render", optional = true }
+getrandom = { workspace = true }
+tokio-tungstenite = { workspace = true, optional = true }
+
+[features]
+default = ["native"]
+native = ["dep:wreq", "dep:wreq-util", "dep:oxibrowser-render", "dep:tokio-tungstenite"]
+
+[dev-dependencies]
+wiremock = "0.6"
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "core_bench"
+harness = false

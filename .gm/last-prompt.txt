@@ -1,0 +1,1 @@
+go ahead and make it a fixture of thebird and gm, in gm it can be the default browser verb, and there can be a cdp verb for playwriter style capabilities that can set up the browser the way we do now

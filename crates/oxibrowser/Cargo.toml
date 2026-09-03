@@ -1,0 +1,54 @@
+[package]
+name = "oxibrowser"
+version = "0.18.0"
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+rust-version.workspace = true
+description = "Headless browser engine with CDP support"
+
+
+[features]
+default = []
+# Enable the headless browser engine (oxibrowser-core + oxibrowser-cdp).
+# Without this feature, only the lightweight search module is compiled —
+# no boa_engine (JS engine) dependency.
+browser = ["dep:oxibrowser-core", "dep:oxibrowser-cdp"]
+
+[[bin]]
+name = "oxibrowser"
+required-features = ["browser"]
+
+[[test]]
+name = "integration"
+required-features = ["browser"]
+
+[dependencies]
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+clap = { version = "4", features = ["derive"] }
+url = { workspace = true }
+base64 = { workspace = true }
+reqwest = { workspace = true }
+futures = { workspace = true }
+async-trait = { workspace = true }
+
+oxibrowser-core = { version = "0.18.0", path = "../oxibrowser-core", optional = true }
+oxibrowser-cdp = { version = "0.18.0", path = "../oxibrowser-cdp", optional = true }
+
+[dev-dependencies]
+
+wiremock = "0.6"
+futures = { workspace = true }
+tokio-tungstenite = { workspace = true }
+reqwest = { workspace = true }
+serde_json = { workspace = true }
