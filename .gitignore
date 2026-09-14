@@ -1,1 +1,4 @@
 .gm/
+/target
+config.bat
+node_modules

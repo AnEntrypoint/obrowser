@@ -69,6 +69,13 @@ DOM snapshot sync.
 
 All shared state uses `Arc<RwLock>` and `AtomicU64`. No exceptions.
 
+### Wasm plugin (`oxibrowser-core/src/wasm_dispatch.rs`)
+
+- Build: `cargo build --release -p oxibrowser-core --no-default-features --target wasm32-wasip1`. The artifact ships as `oxibrowser.wasm` plus its `.sha256` sidecar in the `AnEntrypoint/obrowser-bin` release `v<workspace version>`; agentplug-runner installs it as the `oxibrowser` plugin behind gm's `serp` verb.
+- Every verb takes an optional `page` field (default `default`). Each page is its own `Session` with its own cookie jar, at most 16 pages, least recently used evicted. `list-pages` and `close-page` manage them; `capabilities` reports the surface.
+- A page's `Session` is built directly, not through `Browser::new_session()`: `Browser` keeps an `Arc` clone of every session for tab bookkeeping, so the take-and-return pattern failed with "session Arc has other owners".
+- This repository has no CI since it was re-created. The publishing workflow was a `release.yml` calling `AnEntrypoint/rs-plugkit/.github/workflows/wasm-plugin-release.yml@main` (inputs `wasm_artifact_name: oxibrowser_core.wasm`, `published_asset_basename: oxibrowser`, `release_repo: AnEntrypoint/obrowser-bin`, `release_title_prefix: obrowser`, the build command above) with `PUBLISHER_TOKEN` and `RELEASE_SIGNING_KEY` secrets. Restoring it needs the `PUBLISHER_TOKEN` repository secret first; until then a release is built locally and uploaded with `gh release create`.
+
 ## Detailed Docs (read when the task needs them)
 
 
