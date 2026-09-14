@@ -2837,7 +2837,7 @@ dependencies = [
 
 [[package]]
 name = "oxibrowser-render"
-version = "0.18.0"
+version = "0.18.4"
 dependencies = [
  "anyrender",
  "anyrender_vello_cpu",
