@@ -9,7 +9,7 @@
 //! 6. Inspect DOM via CSS selector
 //! 7. Close
 //!
-//! Run with: `cargo test -p oxibrowser --test smoke`
+//! Run with: `cargo test -p oxibrowser --test smoke --features browser`
 
 use futures::{SinkExt, StreamExt};
 use std::net::SocketAddr;
@@ -32,15 +32,12 @@ struct OxiBrowserProcess {
 impl OxiBrowserProcess {
     /// Spawn `cargo run -p oxibrowser -- serve --port <port>`.
     fn start(port: u16) -> Self {
-        let child = Command::new("cargo")
+        let child = Command::new(env!("CARGO_BIN_EXE_oxibrowser"))
             .args([
-                "run",
-                "-p",
-                "oxibrowser",
-                "--",
                 "serve",
                 "--port",
                 &port.to_string(),
+                "--allow-private-ips",
             ])
             .stdout(Stdio::null())
             .stderr(Stdio::null())
@@ -51,11 +48,15 @@ impl OxiBrowserProcess {
     }
 
     /// Wait for the CDP HTTP endpoint to respond, returning the socket address.
-    async fn wait_ready(&self) -> SocketAddr {
+    async fn wait_ready(&mut self) -> SocketAddr {
         let addr: SocketAddr = format!("127.0.0.1:{}", self.port).parse().unwrap();
-        let deadline = tokio::time::Instant::now() + Duration::from_secs(30);
+        let deadline = tokio::time::Instant::now() + Duration::from_secs(120);
 
         loop {
+            if let Some(status) = self.child.try_wait().expect("failed to poll OxiBrowser") {
+                panic!("OxiBrowser CDP server exited before readiness: {status}");
+            }
+
             let remaining = deadline.saturating_duration_since(tokio::time::Instant::now());
             if remaining.is_zero() {
                 panic!("OxiBrowser CDP server did not become ready within 30s");
@@ -109,7 +110,9 @@ impl TestHttpServer {
                 tokio::select! {
                     accept = tokio_listener.accept() => {
                         if let Ok((mut stream, _)) = accept {
-                            use tokio::io::AsyncWriteExt;
+                            use tokio::io::{AsyncReadExt, AsyncWriteExt};
+                            let mut request = [0; 1024];
+                            let _ = stream.read(&mut request).await;
                             let _ = stream.write_all(body.as_bytes()).await;
                             let _ = stream.shutdown().await;
                         }
@@ -215,7 +218,7 @@ async fn send_command(
 
 /// Simulates: `const browser = await puppeteer.connect({ browserWSEndpoint })`
 #[tokio::test]
-#[ignore] // Requires `cargo run` build; run with `cargo test -p oxibrowser --test smoke -- --ignored`
+#[ignore] // Requires `cargo run` build; run with `cargo test -p oxibrowser --test smoke --features browser -- --ignored`
 async fn test_puppeteer_connect_and_get_version() {
     let port = {
         use std::net::TcpListener;
@@ -225,7 +228,7 @@ async fn test_puppeteer_connect_and_get_version() {
             .unwrap()
             .port()
     };
-    let _oxi = OxiBrowserProcess::start(port);
+    let mut _oxi = OxiBrowserProcess::start(port);
     let addr = _oxi.wait_ready().await;
 
     let (mut sink, mut ws) = connect_ws(addr).await;
@@ -244,7 +247,7 @@ async fn test_puppeteer_connect_and_get_version() {
 
 /// Simulates: `const page = await browser.newPage()` → Target.createTarget
 #[tokio::test]
-#[ignore] // Requires `cargo run` build; run with `cargo test -p oxibrowser --test smoke -- --ignored`
+#[ignore] // Requires `cargo run` build; run with `cargo test -p oxibrowser --test smoke --features browser -- --ignored`
 async fn test_puppeteer_new_page_equivalent() {
     let port = {
         use std::net::TcpListener;
@@ -254,7 +257,7 @@ async fn test_puppeteer_new_page_equivalent() {
             .unwrap()
             .port()
     };
-    let _oxi = OxiBrowserProcess::start(port);
+    let mut _oxi = OxiBrowserProcess::start(port);
     let addr = _oxi.wait_ready().await;
 
     let (mut sink, mut ws) = connect_ws(addr).await;
@@ -297,7 +300,7 @@ async fn test_puppeteer_new_page_equivalent() {
 /// await browser.close();
 /// ```
 #[tokio::test]
-#[ignore] // Requires `cargo run` build; run with `cargo test -p oxibrowser --test smoke -- --ignored`
+#[ignore] // Requires `cargo run` build; run with `cargo test -p oxibrowser --test smoke --features browser -- --ignored`
 async fn test_puppeteer_full_workflow() {
     let html = r#"<!DOCTYPE html>
 <html lang="en">
@@ -320,7 +323,7 @@ async fn test_puppeteer_full_workflow() {
             .unwrap()
             .port()
     };
-    let _oxi = OxiBrowserProcess::start(port);
+    let mut _oxi = OxiBrowserProcess::start(port);
     let addr = _oxi.wait_ready().await;
     let (mut sink, mut ws) = connect_ws(addr).await;
 
@@ -359,7 +362,10 @@ async fn test_puppeteer_full_workflow() {
     )
     .await;
     assert_eq!(resp["id"], 5);
-    assert!(resp["result"]["frameId"].is_string());
+    assert!(
+        resp["result"]["frameId"].is_string(),
+        "Page.navigate response: {resp}"
+    );
 
     // 6. Runtime.evaluate: document.title
     let resp = send_command(

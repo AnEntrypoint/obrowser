@@ -211,7 +211,9 @@ where
     let result = f(&mut session).await.map_err(|e| e.to_string());
     PAGES.with_borrow_mut(|table| {
         let last_used = table.tick();
-        table.slots.insert(page.to_string(), PageSlot { session, last_used });
+        table
+            .slots
+            .insert(page.to_string(), PageSlot { session, last_used });
         table.evict_least_recently_used_beyond_capacity(page);
     });
     result
@@ -222,7 +224,11 @@ async fn verb_navigate(page: &str, body: &Value) -> u64 {
         return err("navigate", page, "missing required field: url");
     };
     let url = url.to_string();
-    match with_page(page, |session| Box::pin(async move { session.navigate(&url).await })).await {
+    match with_page(page, |session| {
+        Box::pin(async move { session.navigate(&url).await })
+    })
+    .await
+    {
         Ok(()) => ok("navigate", page, json!({ "navigated": true })),
         Err(e) => err("navigate", page, e),
     }
@@ -233,8 +239,10 @@ async fn verb_evaluate(page: &str, body: &Value) -> u64 {
         return err("evaluate", page, "missing required field: expression");
     };
     let expression = expression.to_string();
-    match with_page(page, |session| Box::pin(async move { session.evaluate_js(&expression).await }))
-        .await
+    match with_page(page, |session| {
+        Box::pin(async move { session.evaluate_js(&expression).await })
+    })
+    .await
     {
         Ok(result) => ok(
             "evaluate",
@@ -250,7 +258,11 @@ async fn verb_dom_query(page: &str, body: &Value) -> u64 {
         return err("dom-query", page, "missing required field: selector");
     };
     let selector = selector.to_string();
-    match with_page(page, |session| Box::pin(async move { session.dom_snapshot().await })).await {
+    match with_page(page, |session| {
+        Box::pin(async move { session.dom_snapshot().await })
+    })
+    .await
+    {
         Ok(Some(snapshot)) => {
             let matched = snapshot.query_selector_all(&selector);
             let nodes: Vec<Value> = matched
@@ -291,7 +303,11 @@ fn verb_list_pages(page: &str) -> u64 {
             })
             .collect()
     });
-    ok("list-pages", page, json!({ "pages": pages, "max_pages": MAX_PAGES }))
+    ok(
+        "list-pages",
+        page,
+        json!({ "pages": pages, "max_pages": MAX_PAGES }),
+    )
 }
 
 fn verb_close_page(page: &str) -> u64 {

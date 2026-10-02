@@ -84,7 +84,6 @@ pub struct RenderDocument {
 }
 
 impl RenderDocument {
-    // ── Construction ───────────────────────────────────────────────────────
 
     /// Parse HTML, resolve styles (Stylo), and lay out (Taffy) for `viewport`.
     ///
@@ -128,7 +127,6 @@ impl RenderDocument {
         &mut self.doc
     }
 
-    // ── Queries ────────────────────────────────────────────────────────────
 
     /// The root element's node id (the `<html>` element).
     pub fn root_element_id(&self) -> NodeId {
@@ -201,7 +199,6 @@ impl RenderDocument {
         }
     }
 
-    // ── Mutation ───────────────────────────────────────────────────────────
     //
     // Each mutation goes through `BaseDocument::mutate()`, which returns a
     // short-lived `DocumentMutator` that flushes style/layout damage on drop.
@@ -283,7 +280,6 @@ impl RenderDocument {
         }
     }
 
-    // ── Capture ────────────────────────────────────────────────────────────
 
     /// The laid-out content size in CSS pixels (from the root element's
     /// `final_layout`). Valid only after [`Self::from_html`] (which resolves).

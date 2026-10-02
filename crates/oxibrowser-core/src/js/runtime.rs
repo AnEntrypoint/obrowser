@@ -30,6 +30,8 @@ use std::sync::Arc;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::mpsc::{self, Receiver, Sender};
 
+type LocalStorageBuckets = HashMap<String, Arc<RefCell<HashMap<String, String>>>>;
+
 use base64::Engine;
 use boa_engine::builtins::promise::ResolvingFunctions;
 use boa_engine::object::builtins::{JsArray, JsPromise};
@@ -632,6 +634,7 @@ impl InlineCmdTx {
             user_agent,
             fetch_tx_arc,
             local_storage_tx_arc,
+            local_storage_by_origin,
             cookie_jar_arc,
             dom_snapshot,
             render_doc_cell,
@@ -647,6 +650,7 @@ impl InlineCmdTx {
             user_agent,
             fetch_tx_arc,
             local_storage_tx_arc,
+            local_storage_by_origin,
             cookie_jar_arc,
             render_doc_cell,
         );
@@ -665,6 +669,7 @@ struct InlineJsEngine {
     user_agent: String,
     fetch_tx_arc: Arc<RwLock<Option<std::sync::mpsc::Sender<FetchRequestMsg>>>>,
     local_storage_tx_arc: Arc<RwLock<Option<std::sync::mpsc::Sender<LocalStorageMsg>>>>,
+    local_storage_by_origin: LocalStorageBuckets,
     cookie_jar_arc: Arc<RwLock<Option<Arc<RwLock<CookieJar>>>>>,
     dom_snapshot: Arc<RwLock<Option<DomSnapshot>>>,
     render_doc_cell: Rc<RefCell<Option<RenderDocument>>>,
@@ -701,6 +706,7 @@ impl InlineJsEngine {
             user_agent: user_agent.to_string(),
             fetch_tx_arc,
             local_storage_tx_arc,
+            local_storage_by_origin: LocalStorageBuckets::new(),
             cookie_jar_arc,
             dom_snapshot,
             render_doc_cell,
@@ -1172,6 +1178,7 @@ fn js_thread_loop(
         Arc::new(RwLock::new(None));
     let local_storage_tx_arc: Arc<RwLock<Option<std::sync::mpsc::Sender<LocalStorageMsg>>>> =
         Arc::new(RwLock::new(None));
+    let mut local_storage_by_origin = LocalStorageBuckets::new();
     let cookie_jar_arc: Arc<RwLock<Option<Arc<RwLock<CookieJar>>>>> = Arc::new(RwLock::new(None));
     let dom_snapshot: Arc<RwLock<Option<DomSnapshot>>> = Arc::new(RwLock::new(None));
     // The Blitz-backed render document. `BaseDocument` is effectively `!Send`,
@@ -1204,6 +1211,7 @@ fn js_thread_loop(
             &user_agent,
             &fetch_tx_arc,
             &local_storage_tx_arc,
+            &mut local_storage_by_origin,
             &cookie_jar_arc,
             &render_doc_cell,
         ) {
@@ -1232,6 +1240,7 @@ fn process_js_command(
     user_agent: &str,
     fetch_tx_arc: &Arc<RwLock<Option<std::sync::mpsc::Sender<FetchRequestMsg>>>>,
     local_storage_tx_arc: &Arc<RwLock<Option<std::sync::mpsc::Sender<LocalStorageMsg>>>>,
+    local_storage_by_origin: &mut LocalStorageBuckets,
     cookie_jar_arc: &Arc<RwLock<Option<Arc<RwLock<CookieJar>>>>>,
     render_doc_cell: &Rc<RefCell<Option<RenderDocument>>>,
 ) -> bool {
@@ -1405,32 +1414,23 @@ fn process_js_command(
                     user_agent,
                     fetch_tx_arc,
                 );
-                // Preserve localStorage across URL changes.
-                // TODO(#sop): Check same-origin before preserving localStorage.
-                // Currently preserves across all navigations, including cross-origin.
-                // In a production browser, localStorage should be scoped per-origin.
-                //
-                // Only re-register localStorage if it hasn't been registered yet;
-                // otherwise the existing JS-side storage object persists across navigations
-                // (same-origin policy would be checked in a full implementation).
-                // Previously this always re-registered with an empty HashMap, wiping storage.
-                let existing_ls = ctx
-                    .global_object()
-                    .get(js_string!("localStorage"), ctx)
-                    .ok();
-                if existing_ls
+                let storage = dom_snapshot_ref
+                    .read()
                     .as_ref()
-                    .is_none_or(|v| v.is_undefined() || v.is_null())
-                {
-                    // First time — register fresh
-                    let empty = std::collections::HashMap::new();
-                    register_local_storage(
-                        ctx,
-                        empty,
-                        &dom_snapshot_ref,
-                        local_storage_tx_arc.clone(),
-                    );
-                }
+                    .and_then(|snapshot| local_storage_origin(&snapshot.url))
+                    .map(|origin| {
+                        local_storage_by_origin
+                            .entry(origin)
+                            .or_insert_with(|| Arc::new(RefCell::new(HashMap::new())))
+                            .clone()
+                    })
+                    .unwrap_or_else(|| Arc::new(RefCell::new(HashMap::new())));
+                register_local_storage(
+                    ctx,
+                    storage,
+                    &dom_snapshot_ref,
+                    local_storage_tx_arc.clone(),
+                );
                 // else: localStorage already exists, preserve it across navigation
                 let _ = response_tx.send(JsResponse::Done);
             }
@@ -1472,6 +1472,17 @@ fn process_js_command(
                 nav_timeout_ms,
                 response_tx,
             } => {
+                let storage = base_url
+                    .as_deref()
+                    .and_then(local_storage_origin)
+                    .map(|origin| {
+                        local_storage_by_origin
+                            .entry(origin)
+                            .or_insert_with(|| Arc::new(RefCell::new(HashMap::new())))
+                            .clone()
+                    })
+                    .unwrap_or_else(|| Arc::new(RefCell::new(HashMap::new())));
+                register_local_storage(ctx, storage, dom_snapshot, local_storage_tx_arc.clone());
                 let vp = Viewport {
                     width: viewport.0.max(64),
                     height: viewport.1.max(64),
@@ -7922,16 +7933,19 @@ fn object_to_json_via_stringify(obj: &boa_engine::JsObject, context: &mut Contex
 /// localStorage is a simple key-value store with synchronous getItem/setItem.
 /// Changes are propagated back to the Session via read-only Arc (since JS thread
 /// can't mutate Session directly).
+fn local_storage_origin(url: &str) -> Option<String> {
+    match url::Url::parse(url).ok()?.origin() {
+        url::Origin::Tuple(scheme, host, port) => Some(format!("{scheme}://{host}:{port}")),
+        url::Origin::Opaque(_) => None,
+    }
+}
+
 fn register_local_storage(
     ctx: &mut Context,
-    storage: std::collections::HashMap<String, String>,
+    storage_arc: Arc<RefCell<HashMap<String, String>>>,
     _dom_snapshot: &Arc<RwLock<Option<DomSnapshot>>>,
     local_storage_tx: Arc<RwLock<Option<std::sync::mpsc::Sender<LocalStorageMsg>>>>,
 ) {
-    // Build a JS object with Storage interface methods
-    // We store the HashMap in a RefCell so JS can mutate it.
-    use std::cell::RefCell;
-    let storage_arc = Arc::new(RefCell::new(storage));
     let _storage_for_methods = storage_arc.clone();
 
     // --- getItem ---
@@ -11646,5 +11660,72 @@ mod tests {
             .unwrap();
         assert!(r.is_ok());
         assert_eq!(r.value, Some(serde_json::Value::Bool(true)));
+    }
+
+    #[tokio::test]
+    async fn local_storage_uses_tuple_origins_and_rejects_opaque_persistence() {
+        let mut rt = JsRuntime::new();
+        let document = "<html><body></body></html>";
+
+        rt.set_document(document, Some("https://example.test:443/one"), (800, 600))
+            .await
+            .unwrap();
+        rt.evaluate("localStorage.setItem('key', 'same-origin')")
+            .await
+            .unwrap();
+
+        rt.set_document(document, Some("https://example.test/two"), (800, 600))
+            .await
+            .unwrap();
+        assert_eq!(
+            rt.evaluate("localStorage.getItem('key')")
+                .await
+                .unwrap()
+                .value,
+            Some(serde_json::json!("same-origin"))
+        );
+
+        rt.set_document(
+            document,
+            Some("https://example.test:8443/three"),
+            (800, 600),
+        )
+        .await
+        .unwrap();
+        assert_eq!(
+            rt.evaluate("localStorage.getItem('key')")
+                .await
+                .unwrap()
+                .value,
+            Some(serde_json::Value::Null)
+        );
+
+        rt.set_document(document, Some("https://other.test/one"), (800, 600))
+            .await
+            .unwrap();
+        assert_eq!(
+            rt.evaluate("localStorage.getItem('key')")
+                .await
+                .unwrap()
+                .value,
+            Some(serde_json::Value::Null)
+        );
+
+        rt.set_document(document, Some("data:text/html,first"), (800, 600))
+            .await
+            .unwrap();
+        rt.evaluate("localStorage.setItem('key', 'opaque')")
+            .await
+            .unwrap();
+        rt.set_document(document, Some("data:text/html,second"), (800, 600))
+            .await
+            .unwrap();
+        assert_eq!(
+            rt.evaluate("localStorage.getItem('key')")
+                .await
+                .unwrap()
+                .value,
+            Some(serde_json::Value::Null)
+        );
     }
 }

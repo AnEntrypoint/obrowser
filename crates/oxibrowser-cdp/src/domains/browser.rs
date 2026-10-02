@@ -1,12 +1,7 @@
-//! CDP Browser domain handler.
-//!
-//! Handles Browser.getVersion, Browser.close, Browser.getWindowForTarget.
-
 use crate::domains::DomainResult;
 use crate::protocol::CdpError;
 use serde_json::{Value, json};
 
-/// Dispatch Browser domain methods.
 pub fn handle(method: &str, _params: Option<Value>) -> DomainResult {
     match method {
         "getVersion" => get_version(),

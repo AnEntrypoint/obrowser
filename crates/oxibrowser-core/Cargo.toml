@@ -13,10 +13,6 @@ rust-version.workspace = true
 description = "Core browser engine: Browser, Session, Page, Frame lifecycle"
 
 [lib]
-# cdylib is required so `wasm_dispatch::dispatch_verb`'s #[no_mangle] export
-# actually appears in the wasm32-wasip1 binary's export table for a host
-# (gm's agentplug) to call; rlib keeps native's internal consumers (the
-# `oxibrowser` CLI, `oxibrowser-cdp`) working exactly as before.
 crate-type = ["rlib", "cdylib"]
 
 [dependencies]
@@ -60,3 +56,6 @@ criterion = { version = "0.5", features = ["html_reports"] }
 [[bench]]
 name = "core_bench"
 harness = false
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+tokio = { version = "1", default-features = false, features = ["rt-multi-thread"] }
